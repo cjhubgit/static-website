@@ -1,34 +1,46 @@
-{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <main>
+        <div style="text-align: center; font-family: Calibri, sans-serif; font-size: 18px; padding: 20px; border: 2px solid #4CAF50; border-radius: 10px; margin: 20px auto; max-width: 800px; background-color: #f9f9f9;">
+            <h1 style="color: #4CAF50;">My Portfolio</h1>
+            <p>Welcome to my portfolio! Here, I showcase my journey in DevOps, from beginner to mastering modern tools and practices.</p>
 
-{% block title %}Portfolio{% endblock %}
+            <!-- Timeline Section -->
+            <div style="text-align: left; margin-top: 20px;">
+                <h2 style="color: #4CAF50; text-align: center;">My DevOps Journey Timeline</h2>
+                <div style="position: relative; padding-left: 40px; margin-bottom: 20px;">
+                    <div style="position: absolute; left: 0; top: 0; width: 25px; height: 25px; border-radius: 50%; background-color: #4CAF50; border: 3px solid #fff; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);"></div>
+                    <p style="font-weight: bold; color: #4CAF50;">May 2024</p>
+                    <p>Kickstarted my journey by learning AWS and GitHub Actions. Built secure and scalable solutions using automation.</p>
+                </div>
+                <div style="position: relative; padding-left: 40px; margin-bottom: 20px;">
+                    <div style="position: absolute; left: 0; top: 0; width: 25px; height: 25px; border-radius: 50%; background-color: #4CAF50; border: 3px solid #fff; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);"></div>
+                    <p style="font-weight: bold; color: #4CAF50;">October 2024</p>
+                    <p>Mastered Jenkins and Docker, enhancing my CI/CD pipeline skills.</p>
+                </div>
+            </div>
 
-{% block content %}
-<div style="text-align: center; font-family: Calibri, sans-serif; font-size: 18px; padding: 20px; border: 2px solid #4CAF50; border-radius: 10px; margin: 20px auto; max-width: 800px; background-color: #f9f9f9;">
-    <h1 style="color: #4CAF50;">My Portfolio</h1>
-    <p>Welcome to my portfolio! Here, I showcase my journey in DevOps, from beginner to mastering modern tools and practices.</p>
-
-    <!-- Timeline Section -->
-    <div style="text-align: left; margin-top: 20px;">
-        <h2 style="color: #4CAF50; text-align: center;">My DevOps Journey Timeline</h2>
-        <div style="position: relative; padding-left: 40px; margin-bottom: 20px;">
-            <div style="position: absolute; left: 0; top: 0; width: 25px; height: 25px; border-radius: 50%; background-color: #4CAF50; border: 3px solid #fff; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);"></div>
-            <p style="font-weight: bold; color: #4CAF50;">May 2024</p>
-            <p>Kickstarted my journey by learning AWS and GitHub Actions. Built secure and scalable solutions using automation.</p>
+            <!-- Contact Section -->
+            <div style="margin-top: 20px; text-align: center;">
+                <h2 style="color: #4CAF50;">Contact Me</h2>
+                <p><b>WhatsApp:</b> +966541385277</p>
+                <p><b>Email:</b> <a href="mailto:ahmedy167@gmail.com" style="color: #4CAF50;">ahmedy167@gmail.com</a></p>
+                <p><b>GitHub:</b> <a href="https://github.com/cjhubgit" style="color: #4CAF50;">cjhubgit</a></p>
+            </div>
         </div>
-        <div style="position: relative; padding-left: 40px; margin-bottom: 20px;">
-            <div style="position: absolute; left: 0; top: 0; width: 25px; height: 25px; border-radius: 50%; background-color: #4CAF50; border: 3px solid #fff; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);"></div>
-            <p style="font-weight: bold; color: #4CAF50;">October 2024</p>
-            <p>Mastered Jenkins and Docker, enhancing my CI/CD pipeline skills.</p>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div style="margin-top: 20px; text-align: center;">
-        <h2 style="color: #4CAF50;">Contact Me</h2>
-        <p><b>WhatsApp:</b> +966541385277</p>
-        <p><b>Email:</b> <a href="mailto:ahmedy167@gmail.com" style="color: #4CAF50;">ahmedy167@gmail.com</a></p>
-        <p><b>GitHub:</b> <a href="https://github.com/cjhubgit" style="color: #4CAF50;">cjhubgit</a></p>
-    </div>
-</div>
-{% endblock %}
-
+    </main>
+    <footer>
+        <p>&copy; 2025 Alex Armasu</p>
+    </footer>
+</body>
+</html>
