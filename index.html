@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Website</title>
+    <title>DevOps Portfolio - Alex Armasu</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Static Website</h1>
+        <h1>Welcome to My DevOps Portfolio</h1>
+        <div id="clock"></div>
     </header>
     <main>
-        <p>This is a simple static website hosted on S3.</p>
-        <li style="margin: 0 15px;"><a href="/portfolio" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 15px; border-radius: 5px; transition: background-color 0.3s;">Portfolio</a></li>
+        <p>This website showcases my DevOps journey, skills, and projects.</p>
+        <nav>
+            <ul>
+                <li><a href="/portfolio" style="color: #4CAF50; text-decoration: none;">My Portfolio</a></li>
+            </ul>
+        </nav>
     </main>
     <footer>
         <p>&copy; 2025 Alex Armasu</p>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `Current Time: ${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
+
