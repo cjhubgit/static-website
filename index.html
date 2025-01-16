@@ -6,74 +6,61 @@
     <title>DevOps Portfolio - Ahmed Yusuf</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6;">
+<body>
     <!-- Header Section -->
-    <header style="background-color: #4CAF50; color: white; padding: 20px; text-align: center;">
+    <header>
         <h1>Welcome to My DevOps Journey</h1>
-        <p style="margin: 10px 0; font-size: 20px; font-style: italic;">
+        <p>
             From Zero to CI/CD Hero - A Story of Passion, Perseverance, and Pipelines
         </p>
-        <div id="clock" style="font-size: 20px; margin-top: 10px;"></div>
+        <div id="clock"></div>
     </header>
 
-    <!-- Navigation Links to Other Pages -->
-    <nav style="margin: 20px 0;">
-        <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
-            <li>
-                <a href="portfolio.html" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: #4CAF50; border: none; border-radius: 5px; transition: background-color 0.3s;">My Portfolio</a>
-            </li>
-            <li>
-                <a href="DevOps%20Blog.html" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: #4CAF50; border: none; border-radius: 5px; transition: background-color 0.3s;">DevOps Stories</a>
-            </li>
-            <li>
-                <a href="Podcast.html" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: #4CAF50; border: none; border-radius: 5px; transition: background-color 0.3s;">Podcast</a>
-            </li>
-            <li>
-                <a href="contact%20Me.html" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: #4CAF50; border: none; border-radius: 5px; transition: background-color 0.3s;">Contact Me</a>
-            </li>
-            <li>
-                <a href="Resource.html" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: #4CAF50; border: none; border-radius: 5px; transition: background-color 0.3s;">Resources</a>
-            </li>
-            <li>
-                <a href="About%20me.html" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: #4CAF50; border: none; border-radius: 5px; transition: background-color 0.3s;">About Me</a>
-            </li>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="portfolio.html">My Portfolio</a></li>
+            <li><a href="DevOps%20Blog.html">DevOps Stories</a></li>
+            <li><a href="Podcast.html">Podcast</a></li>
+            <li><a href="contact%20Me.html">Contact Me</a></li>
+            <li><a href="Resource.html">Resources</a></li>
+            <li><a href="About%20me.html">About Me</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <main style="padding: 20px; text-align: center;">
+    <main>
         <section>
-            <p style="font-size: 18px; color: #333;">
+            <p>
                 Welcome to my portfolio! This is a space where I share the exciting journey that transformed me from a complete beginner to a skilled DevOps engineer. My story is one of determination, continuous learning, and harnessing the power of automation to build efficient CI/CD pipelines.
             </p>
         </section>
 
         <!-- Highlights Section -->
-        <section style="margin-top: 30px; padding: 20px; border: 2px solid #4CAF50; border-radius: 10px; background-color: #f9f9f9;">
-            <h2 style="color: #4CAF50; margin-bottom: 20px;">DevOps Highlights</h2>
-            <div style="text-align: left; margin: auto; max-width: 800px;">
-                <ul style="font-size: 18px; color: #333; line-height: 1.8;">
-                    <li><b>Starting Point:</b> In early 2024, I had no experience with cloud platforms or automation tools. My journey began with understanding the basics of AWS and version control with Git.</li>
-                    <li><b>Breaking Barriers:</b> By mid-2024, I built my first CI/CD pipeline using Jenkins and Docker, automating deployments and ensuring seamless application delivery.</li>
-                    <li><b>Real-World Impact:</b> I developed a Flask web application, integrated it with GitHub Actions, and deployed it to AWS, gaining hands-on experience with containerization and scalability.</li>
-                    <li><b>Continuous Growth:</b> Today, I focus on creating scalable solutions, managing cloud infrastructure, and building pipelines that enhance development workflows.</li>
-                </ul>
-            </div>
+        <section class="highlights">
+            <h2>DevOps Highlights</h2>
+            <ul>
+                <li><b>Starting Point:</b> In early 2024, I had no experience with cloud platforms or automation tools. My journey began with understanding the basics of AWS and version control with Git.</li>
+                <li><b>Breaking Barriers:</b> By mid-2024, I built my first CI/CD pipeline using Jenkins and Docker, automating deployments and ensuring seamless application delivery.</li>
+                <li><b>Real-World Impact:</b> I developed a Flask web application, integrated it with GitHub Actions, and deployed it to AWS, gaining hands-on experience with containerization and scalability.</li>
+                <li><b>Continuous Growth:</b> Today, I focus on creating scalable solutions, managing cloud infrastructure, and building pipelines that enhance development workflows.</li>
+            </ul>
         </section>
     </main>
 
     <!-- Bot Animation -->
-    <div id="bot-container" style="margin: 30px auto; width: 100px; height: 100px; position: relative; animation: moveBot 5s infinite;">
-        <div style="width: 100px; height: 100px; background-color: #4CAF50; border-radius: 50%;"></div>
+    <div class="bot">
+        <div class="bot-eye"></div>
+        <div class="bot-eye" style="left: 60px;"></div>
+        <div class="bot-mouth"></div>
     </div>
 
     <!-- Footer Section -->
-    <footer style="background-color: #333; color: white; text-align: center; padding: 10px; margin-top: 20px;">
-        <p>&copy; 2025 Ahmed Yusuf</p>
-        <p style="font-size: 14px;">"Automating the future, one pipeline at a time."</p>
+    <footer>
+        <p>&copy; 2025 Ahmed Yusuf | "Automating the future, one pipeline at a time."</p>
     </footer>
 
-    <!-- JavaScript for Clock -->
+    <!-- JavaScript -->
     <script>
         function updateClock() {
             const now = new Date();
