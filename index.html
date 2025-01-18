@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Portfolio - Ahmed Yusuf</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: #006400;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        #clock {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            background: #008000;
+            margin: 0;
+            padding: 0.5rem;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border: 5px solid #32CD32; /* Green Border */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .highlights ul {
+            list-style: square;
+            padding-left: 1.5rem;
+        }
+
+        .highlights ul li {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #006400;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to My DevOps Journey</h1>
+        <p>From Zero to CI/CD Hero - A Story of Passion, Perseverance, and Pipelines</p>
+        <div id="clock"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="portfolio.html">My Portfolio</a></li>
+            <li><a href="DevOps%20Blog.html">DevOps Stories</a></li>
+            <li><a href="Podcast.html">Podcast</a></li>
+            <li><a href="contact%20Me.html">Contact Me</a></li>
+            <li><a href="Resource.html">Resources</a></li>
+            <li><a href="About%20me.html">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <p>
+                Welcome to my portfolio! This is a space where I share the exciting journey that transformed me from a complete beginner to a skilled DevOps engineer. My story is one of determination, continuous learning, and harnessing the power of automation to build efficient CI/CD pipelines.
+            </p>
+        </section>
+
+        <!-- Highlights -->
+        <section class="highlights">
+            <h2>DevOps Highlights</h2>
+            <ul>
+                <li><b>Starting Point:</b> In early 2024, I had no experience with cloud platforms or automation tools. My journey began with understanding the basics of AWS and version control with Git.</li>
+                <li><b>Breaking Barriers:</b> By mid-2024, I built my first CI/CD pipeline using Jenkins and Docker, automating deployments and ensuring seamless application delivery.</li>
+                <li><b>Real-World Impact:</b> I developed a Flask web application, integrated it with GitHub Actions, and deployed it to AWS, gaining hands-on experience with containerization and scalability.</li>
+                <li><b>Continuous Growth:</b> Today, I focus on creating scalable solutions, managing cloud infrastructure, and building pipelines that enhance development workflows.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ahmed Yusuf | "Automating the future, one pipeline at a time."</p>
+    </footer>
+
+    <!-- Clock Script -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `Current Time: ${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
+
