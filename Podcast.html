@@ -82,6 +82,19 @@
             border: none;
         }
 
+        .camera-access {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .camera-access video {
+            width: 100%;
+            max-width: 600px;
+            border: 3px solid #32CD32;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         footer {
             text-align: center;
             padding: 1rem;
@@ -177,11 +190,34 @@
                 loading="lazy">
             </iframe>
         </section>
+
+        <!-- Camera Access Section -->
+        <section class="camera-access">
+            <h2>Access Your Camera</h2>
+            <video id="camera" autoplay></video>
+            <p>Ensure you allow camera access in your browser settings.</p>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Ahmed Yusuf | "Automating the future, one pipeline at a time."</p>
     </footer>
+
+    <script>
+        const video = document.getElementById('camera');
+
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    video.srcObject = stream;
+                })
+                .catch((err) => {
+                    console.error('Error accessing the camera:', err);
+                });
+        } else {
+            alert('Your browser does not support camera access.');
+        }
+    </script>
 </body>
 </html>
