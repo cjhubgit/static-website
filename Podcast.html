@@ -102,6 +102,25 @@
             color: white;
             margin-top: 2rem;
         }
+
+        .camera-buttons {
+            margin-top: 1rem;
+        }
+
+        .camera-buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #008000;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .camera-buttons button:hover {
+            background-color: #005f00;
+        }
     </style>
 </head>
 <body>
@@ -195,6 +214,10 @@
         <section class="camera-access">
             <h2>Access Your Camera</h2>
             <video id="camera" autoplay></video>
+            <div class="camera-buttons">
+                <button id="start-camera">Start Camera</button>
+                <button id="stop-camera">Stop Camera</button>
+            </div>
             <p>Ensure you allow camera access in your browser settings.</p>
         </section>
     </main>
@@ -206,18 +229,31 @@
 
     <script>
         const video = document.getElementById('camera');
+        const startButton = document.getElementById('start-camera');
+        const stopButton = document.getElementById('stop-camera');
+        let stream;
 
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then((stream) => {
-                    video.srcObject = stream;
-                })
-                .catch((err) => {
-                    console.error('Error accessing the camera:', err);
-                });
-        } else {
-            alert('Your browser does not support camera access.');
-        }
+        startButton.addEventListener('click', () => {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then((mediaStream) => {
+                        stream = mediaStream;
+                        video.srcObject = stream;
+                    })
+                    .catch((err) => {
+                        console.error('Error accessing the camera:', err);
+                    });
+            } else {
+                alert('Your browser does not support camera access.');
+            }
+        });
+
+        stopButton.addEventListener('click', () => {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                video.srcObject = null;
+            }
+        });
     </script>
 </body>
 </html>
