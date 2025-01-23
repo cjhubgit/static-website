@@ -1,147 +1,94 @@
-/* Fonts and Reset */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0f0f0f; /* Dark futuristic background */
-  color: #fff;
-  overflow-x: hidden;
-}
+/* New AI-Inspired Styles */
 
-h1, h2, p {
-  text-align: center;
-}
-
-header {
-  background: linear-gradient(90deg, #6a11cb, #2575fc); /* Futuristic gradient */
-  padding: 2rem 1rem;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-}
-
+/* Futuristic Glow for Headings */
 header h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
-  margin: 0;
-}
-
-header p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-/* Navigation Bar */
-.nav-bar {
-  display: flex;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-}
-
-.nav-bar ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.nav-bar ul li a:hover, .nav-bar ul li a.active {
-  background: rgba(106, 17, 203, 0.7);
-}
-
-/* Form Section */
-.contact-section {
-  margin: 2rem auto;
-  padding: 2rem;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.contact-form input, .contact-form textarea, .contact-form button {
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 1rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-}
-
-.contact-form input, .contact-form textarea {
-  background: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 15px rgba(106, 17, 203, 0.8), 0 0 30px rgba(106, 17, 203, 0.6);
   color: #fff;
 }
 
+main h2 {
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+  color: #00ffff;
+}
+
+/* Neon Button Styles */
 .contact-form button {
   background: linear-gradient(90deg, #6a11cb, #2575fc);
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.8), 0 0 20px rgba(106, 17, 203, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form button:hover {
-  opacity: 0.8;
-}
-
-/* Video Message Section */
-.video-message-section {
-  text-align: center;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.video-message-section video {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-
-.video-controls {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.video-controls .btn {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.video-controls .btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(106, 17, 203, 1), 0 0 30px rgba(106, 17, 203, 0.8);
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background: #111;
-  color: #fff;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Video Section Glow */
+.video-message video {
+  border: 2px solid rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+.video-message button {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.8), 0 0 20px rgba(106, 17, 203, 0.6);
+}
+
+.video-message button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(106, 17, 203, 1), 0 0 30px rgba(106, 17, 203, 0.8);
+}
+
+/* Add Neon Effect to Links in the Nav Menu */
+nav ul li a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Footer Glow */
+footer {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+footer p span {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Add Glowing Border to Input Fields */
+.contact-form input, .contact-form textarea {
+  border: 2px solid rgba(106, 17, 203, 0.5);
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: rgba(106, 17, 203, 0.8);
+  box-shadow: 0 0 15px rgba(106, 17, 203, 0.8);
+}
+
+/* Add Subtle Animations */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(106, 17, 203, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.8);
+  }
+}
+
+.contact-form button {
+  animation: glow 2s infinite;
+}
+
+.video-message button {
+  animation: glow 2s infinite;
 }
