@@ -3,96 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camera Access</title>
+    <title>DevOps Podcast - Ahmed Yusuf</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
             text-align: center;
-            padding: 20px;
+            padding: 2rem;
+            background: #006400;
+            color: white;
         }
-        h1 {
-            color: #4CAF50;
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
         }
-        video {
-            border: 2px solid #4CAF50;
-            width: 100%;
-            max-width: 600px;
-            margin-top: 20px;
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
         }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            background: #008000;
+            margin: 0;
+            padding: 0.5rem;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border: 5px solid #32CD32;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .podcast-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .podcast-highlight img {
+            max-width: 150px;
             border-radius: 5px;
         }
-        #start-camera {
-            background-color: #4CAF50;
-            color: white;
+
+        .podcast-player iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
         }
-        #stop-camera {
-            background-color: #f44336;
-            color: white;
+
+        .camera-access {
+            margin-top: 2rem;
+            text-align: center;
         }
-        #error-message {
-            color: #f44336;
-            margin-top: 20px;
+
+        .camera-access video {
+            width: 100%;
+            max-width: 600px;
+            border: 3px solid #32CD32;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #006400;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .camera-buttons {
+            margin-top: 1rem;
+        }
+
+        .camera-buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #008000;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .camera-buttons button:hover {
+            background-color: #005f00;
         }
     </style>
 </head>
 <body>
-    <h1>Access Your Camera</h1>
-    <video id="camera" autoplay></video>
-    <div>
-        <button id="start-camera">Start Camera</button>
-        <button id="stop-camera" disabled>Stop Camera</button>
-    </div>
-    <p id="error-message"></p>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to DevOps Talks</h1>
+        <p>Your hub for insightful discussions on automation, pipelines, and tech stories</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">My Portfolio</a></li>
+            <li><a href="DevOps%20Blog.html">DevOps Stories</a></li>
+            <li><a href="Podcast.html">Podcast</a></li>
+            <li><a href="contact%20Me.html">Contact Me</a></li>
+            <li><a href="Resource.html">Resources</a></li>
+            <li><a href="About%20me.html">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="highlights">
+            <h2>Featured Episode</h2>
+            <div class="podcast-highlight">
+                <img src="assets/images/podcast_cover.png" alt="Podcast Cover">
+                <div>
+                    <h3>The Evolution of CI/CD Pipelines</h3>
+                    <p>In this episode, Ahmed Yusuf discusses the journey from manual deployment to automated CI/CD pipelines, sharing real-world challenges and solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>All Episodes</h2>
+            <ul>
+                <li>Episode 1: What is Jenkins</li>
+                <li>Episode 2: Mastering Docker with dueo decillion podcast</li>
+                <li>Episode 3: Github Actions Runners on AWS</li>
+                <li>Episode 4: Is your CI/CD Pipeline your biggest security risk</li>
+            </ul>
+        </section>
+
+        <section class="podcast-player">
+            <h2>Listen to Our Latest Podcast</h2>
+            <iframe 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/episode/2z1Rtf3gNEOBEmCvOgKPAq" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+            <iframe 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/episode/7GDoGehV6XqBMkgFizidye?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+            <iframe 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/episode/6WkWMUsR7dMP6mXt5UrMpV?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+            <iframe 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/episode/77vIoi5XDQ8DbKE5RwDPIr?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+        </section>
+
+        <!-- Camera Access Section -->
+        <section class="camera-access">
+            <h2>Access Your Camera</h2>
+            <video id="camera" autoplay></video>
+            <div class="camera-buttons">
+                <button id="start-camera">Start Camera</button>
+                <button id="stop-camera">Stop Camera</button>
+            </div>
+            <p>Ensure you allow camera access in your browser settings.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ahmed Yusuf | "Automating the future, one pipeline at a time."</p>
+    </footer>
 
     <script>
         const video = document.getElementById('camera');
         const startButton = document.getElementById('start-camera');
         const stopButton = document.getElementById('stop-camera');
-        const errorMessage = document.getElementById('error-message');
-        let stream = null;
+        let stream;
 
-        // Start the camera
-        const startCamera = async () => {
-            errorMessage.textContent = ''; // Clear any previous error messages
-            try {
-                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-                    throw new Error('Camera access is not supported by your browser.');
-                }
-
-                stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                video.srcObject = stream;
-
-                // Enable the stop button and disable the start button
-                stopButton.disabled = false;
-                startButton.disabled = true;
-            } catch (err) {
-                console.error('Error accessing the camera:', err);
-                errorMessage.textContent = err.message;
+        startButton.addEventListener('click', () => {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then((mediaStream) => {
+                        stream = mediaStream;
+                        video.srcObject = stream;
+                    })
+                    .catch((err) => {
+                        console.error('Error accessing the camera:', err);
+                    });
+            } else {
+                alert('Your browser does not support camera access.');
             }
-        };
+        });
 
-        // Stop the camera
-        const stopCamera = () => {
+        stopButton.addEventListener('click', () => {
             if (stream) {
                 stream.getTracks().forEach(track => track.stop());
                 video.srcObject = null;
-                stream = null;
             }
-
-            // Enable the start button and disable the stop button
-            startButton.disabled = false;
-            stopButton.disabled = true;
-        };
-
-        // Event listeners
-        startButton.addEventListener('click', startCamera);
-        stopButton.addEventListener('click', stopCamera);
+        });
     </script>
 </body>
 </html>
