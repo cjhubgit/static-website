@@ -1,41 +1,59 @@
+name: Build and Push to ECR
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Debug AWS credentials (optional, for troubleshooting)
       - name: Debug AWS credentials
         run: |
           echo "AWS Access Key ID: ${{ secrets.ACCESS_KEY }}"
           echo "AWS Secret Access Key: ${{ secrets.SECRET_KEY }}"
-          echo "AWS Region: ${{ secrets.AMS_REGION }}"
+          echo "AWS Region: ${{ secrets.AWS_REGION }}"
           echo "S3 Bucket Name: ${{ secrets.S3_BUCKET_NAME }}"
 
+      # Step 3: Configure AWS credentials
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.SECRET_KEY }}
-          aws-region: ${{ secrets.AMS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
+      # Step 4: Login to Amazon ECR
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      # Step 5: Build, tag, and push the Docker image to ECR
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
-          ECR_REGISTRY: 586794461410.dkr.ecr.${{ secrets.AMS_REGION }}.amazonaws.com
-          ECR_REPOSITORY: website-static
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: static-website
+          IMAGE_TAG: latest
         run: |
           # Build the Docker image
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           
           # Push the Docker image to ECR
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
-          # Log the S3 Bucket Name (for debugging)
-          echo "S3 Bucket Name: $S3_BUCKET_NAME"
+          # Log the ECR registry and repository (for debugging)
+          echo "ECR Registry: $ECR_REGISTRY"
+          echo "ECR Repository: $ECR_REPOSITORY"
+
+      # Step 6: Deploy to S3 (optional)
+      - name: Deploy to S3
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete
