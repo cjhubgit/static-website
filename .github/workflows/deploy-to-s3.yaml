@@ -31,6 +31,11 @@ jobs:
           ECR_REPOSITORY: website-static
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
+          # Build the Docker image
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          
+          # Push the Docker image to ECR
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          
+          # Log the S3 Bucket Name (for debugging)
           echo "S3 Bucket Name: $S3_BUCKET_NAME"
