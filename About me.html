@@ -223,15 +223,14 @@
 
         <section class="video-section">
             <h2>My Personal Video</h2>
-            <video controls>
-                <source src="your-video-link.mp4" type="video/mp4">
+            <video id="uploaded-video" controls autoplay>
                 Your browser does not support the video tag.
             </video>
         </section>
 
         <section class="upload-section">
             <h2>Upload Your Video</h2>
-            <input type="file" accept="video/*">
+            <input type="file" id="video-upload" accept="video/*">
         </section>
 
         <section class="content-section">
@@ -242,5 +241,21 @@
     <footer>
         <p>&copy; 2025 Ahmed Yusuf | "Automating the future, one pipeline at a time."</p>
     </footer>
+
+    <script>
+        // JavaScript to handle video upload and autoplay
+        const videoUpload = document.getElementById('video-upload');
+        const uploadedVideo = document.getElementById('uploaded-video');
+
+        videoUpload.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const videoURL = URL.createObjectURL(file);
+                uploadedVideo.src = videoURL;
+                uploadedVideo.autoplay = true; // Ensure the video autoplays
+                uploadedVideo.controls = true; // Show controls for the uploaded video
+            }
+        });
+    </script>
 </body>
 </html>
