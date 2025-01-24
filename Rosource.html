@@ -5,6 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - Ahmed Yusuf</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* AI Web 3 Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #0f3460;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #00bcd4;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #a8a8a8;
+        }
+        nav {
+            background: #0f3460;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #00bcd4;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #ff4081;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #00bcd4;
+            border-bottom: 2px solid #ff4081;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #0f3460;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        ul li a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+        ul li a:hover {
+            color: #ff4081;
+        }
+        footer {
+            background: #0f3460;
+            padding: 10px;
+            text-align: center;
+            color: #a8a8a8;
+            margin-top: 20px;
+        }
+        /* Chatbot Styles */
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: #0f3460;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #chatbot-header {
+            background: #16213e;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #00bcd4;
+        }
+        #chatbot-body {
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        #chatbot-input {
+            display: flex;
+            padding: 10px;
+        }
+        #chatbot-input input {
+            flex: 1;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        #chatbot-input button {
+            background: #00bcd4;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #chatbot-input button:hover {
+            background: #ff4081;
+        }
+        .chatbot-message {
+            margin-bottom: 10px;
+        }
+        .chatbot-message.user {
+            text-align: right;
+            color: #00bcd4;
+        }
+        .chatbot-message.bot {
+            text-align: left;
+            color: #e0e0e0;
+        }
+        /* Toggle Button */
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00bcd4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #chatbot-toggle:hover {
+            background: #ff4081;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -28,12 +183,29 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Tools and Resources Section -->
+        <section>
+            <h2>Tools & Resources I Used</h2>
+            <ul>
+                <li><strong>ChatGPT</strong> - For learning concepts, debugging, and automating tasks.</li>
+                <li><strong>Jenkins</strong> - For CI/CD pipelines and automation.</li>
+                <li><strong>Online Tutorials</strong> - Platforms like YouTube, Udemy, and freeCodeCamp.</li>
+                <li><strong>AWS</strong> - For cloud infrastructure and DevOps practices.</li>
+                <li><strong>GitHub Actions</strong> - For automating workflows and deployments.</li>
+                <li><strong>Docker</strong> - For containerization and deployment.</li>
+                <li><strong>Kubernetes</strong> - For orchestration and scaling.</li>
+            </ul>
+        </section>
+
+        <!-- Useful Links Section -->
         <section>
             <h2>Useful Links</h2>
             <ul>
                 <li><a href="https://aws.amazon.com">AWS Documentation</a></li>
                 <li><a href="https://jenkins.io">Jenkins Tutorials</a></li>
                 <li><a href="https://github.com">GitHub Actions Guide</a></li>
+                <li><a href="https://kubernetes.io">Kubernetes Documentation</a></li>
+                <li><a href="https://docker.com">Docker Documentation</a></li>
             </ul>
         </section>
     </main>
@@ -42,5 +214,59 @@
     <footer>
         <p>&copy; 2025 Ahmed Yusuf | "Automating the future, one pipeline at a time."</p>
     </footer>
+
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbot-toggle">🤖</button>
+
+    <!-- Chatbot -->
+    <div id="chatbot">
+        <div id="chatbot-header">DevOps AI Assistant</div>
+        <div id="chatbot-body">
+            <div class="chatbot-message bot">Hello! Ask me anything about DevOps.</div>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" id="chatbot-input-field" placeholder="Ask a question...">
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Script -->
+    <script>
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbot = document.getElementById('chatbot');
+        const chatbotBody = document.getElementById('chatbot-body');
+        const chatbotInputField = document.getElementById('chatbot-input-field');
+        const chatbotSend = document.getElementById('chatbot-send');
+
+        // Toggle chatbot visibility
+        chatbotToggle.addEventListener('click', () => {
+            chatbot.style.display = chatbot.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Chatbot responses
+        const responses = {
+            "what are kubernetes": "Kubernetes is an open-source platform for automating deployment, scaling, and operations of application containers.",
+            "how is devops used in ai": "DevOps in AI involves automating the deployment and scaling of AI models, ensuring continuous integration and delivery (CI/CD) for machine learning pipelines.",
+            "what is cloud devops cybersecurity": "Cloud DevOps cybersecurity focuses on securing cloud infrastructure and applications by integrating security practices into the DevOps pipeline (DevSecOps).",
+            "what is devsecops": "DevSecOps is the practice of integrating security into the DevOps process, ensuring that security is a shared responsibility throughout the software development lifecycle."
+        };
+
+        // Send message
+        chatbotSend.addEventListener('click', () => {
+            const userMessage = chatbotInputField.value.toLowerCase();
+            chatbotBody.innerHTML += `<div class="chatbot-message user">${userMessage}</div>`;
+            const botResponse = responses[userMessage] || "I'm sorry, I don't have an answer for that. Try asking about Kubernetes, DevOps in AI, or DevSecOps.";
+            chatbotBody.innerHTML += `<div class="chatbot-message bot">${botResponse}</div>`;
+            chatbotInputField.value = '';
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        });
+
+        // Allow pressing Enter to send message
+        chatbotInputField.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                chatbotSend.click();
+            }
+        });
+    </script>
 </body>
 </html>
