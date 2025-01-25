@@ -6,97 +6,127 @@
     <title>Resources - Ahmed Yusuf</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* AI Web 3 Theme */
+        /* Web3 Techy Theme */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color: #e0e0e0;
             margin: 0;
             padding: 0;
         }
+
         header {
-            background: #0f3460;
+            background: #1a1a2e;
             padding: 20px;
             text-align: center;
+            border-bottom: 2px solid #00ffcc;
         }
+
         header h1 {
             font-size: 2.5rem;
             margin: 0;
-            color: #00bcd4;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
         }
+
         header p {
             font-size: 1.2rem;
             color: #a8a8a8;
         }
+
         nav {
-            background: #0f3460;
+            background: #1a1a2e;
             padding: 10px;
             text-align: center;
+            border-bottom: 2px solid #00ffcc;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
+
         nav ul li a {
             text-decoration: none;
-            color: #00bcd4;
+            color: #00ffcc;
             font-weight: bold;
+            text-shadow: 0 0 5px #00ffcc;
         }
+
         nav ul li a:hover {
             color: #ff4081;
+            text-shadow: 0 0 5px #ff4081;
         }
+
         main {
             padding: 20px;
         }
+
         section {
             margin-bottom: 30px;
         }
+
         h2 {
-            color: #00bcd4;
+            color: #00ffcc;
             border-bottom: 2px solid #ff4081;
             display: inline-block;
             margin-bottom: 10px;
+            text-shadow: 0 0 5px #00ffcc;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         ul li {
-            background: #0f3460;
+            background: #1a1a2e;
             margin: 10px 0;
             padding: 10px;
             border-radius: 5px;
+            border: 1px solid #00ffcc;
+            box-shadow: 0 0 5px #00ffcc;
         }
+
         ul li a {
-            color: #00bcd4;
+            color: #00ffcc;
             text-decoration: none;
+            text-shadow: 0 0 5px #00ffcc;
         }
+
         ul li a:hover {
             color: #ff4081;
+            text-shadow: 0 0 5px #ff4081;
         }
+
         footer {
-            background: #0f3460;
+            background: #1a1a2e;
             padding: 10px;
             text-align: center;
             color: #a8a8a8;
             margin-top: 20px;
+            border-top: 2px solid #00ffcc;
         }
+
         /* Chatbot Styles */
         #chatbot {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 300px;
-            background: #0f3460;
+            background: #1a1a2e;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
             display: none;
+            border: 1px solid #00ffcc;
         }
+
         #chatbot-header {
             background: #16213e;
             padding: 10px;
@@ -104,60 +134,79 @@
             border-top-right-radius: 10px;
             text-align: center;
             font-weight: bold;
-            color: #00bcd4;
+            color: #00ffcc;
+            text-shadow: 0 0 5px #00ffcc;
         }
+
         #chatbot-body {
             padding: 10px;
             max-height: 200px;
             overflow-y: auto;
         }
+
         #chatbot-input {
             display: flex;
             padding: 10px;
         }
+
         #chatbot-input input {
             flex: 1;
             padding: 5px;
             border: none;
             border-radius: 5px;
+            background: #0f0c29;
+            color: #e0e0e0;
         }
+
         #chatbot-input button {
-            background: #00bcd4;
+            background: #00ffcc;
             border: none;
             padding: 5px 10px;
             margin-left: 10px;
             border-radius: 5px;
             cursor: pointer;
+            color: #0f0c29;
+            font-weight: bold;
         }
+
         #chatbot-input button:hover {
             background: #ff4081;
+            color: #fff;
         }
+
         .chatbot-message {
             margin-bottom: 10px;
         }
+
         .chatbot-message.user {
             text-align: right;
-            color: #00bcd4;
+            color: #00ffcc;
+            text-shadow: 0 0 5px #00ffcc;
         }
+
         .chatbot-message.bot {
             text-align: left;
             color: #e0e0e0;
         }
+
         /* Toggle Button */
         #chatbot-toggle {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #00bcd4;
-            color: #fff;
+            background: #00ffcc;
+            color: #0f0c29;
             border: none;
             padding: 10px 20px;
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+            font-size: 1.2rem;
         }
+
         #chatbot-toggle:hover {
             background: #ff4081;
+            color: #fff;
         }
     </style>
 </head>
@@ -245,8 +294,8 @@
 
         // Chatbot responses
         const responses = {
-            "what are kubernetes": "Kubernetes is an open-source platform for automating deployment, scaling, and operations of application containers.",
-            "how is devops and  used in ai": "DevOps in AI involves automating the deployment and scaling of AI models, ensuring continuous integration and delivery (CI/CD) for machine learning pipelines.",
+            "what is kubernetes": "Kubernetes is an open-source platform for automating deployment, scaling, and operations of application containers.",
+            "how is devops used in ai": "DevOps in AI involves automating the deployment and scaling of AI models, ensuring continuous integration and delivery (CI/CD) for machine learning pipelines.",
             "what is cloud devops cybersecurity": "Cloud DevOps cybersecurity focuses on securing cloud infrastructure and applications by integrating security practices into the DevOps pipeline (DevSecOps).",
             "what is devsecops": "DevSecOps is the practice of integrating security into the DevOps process, ensuring that security is a shared responsibility throughout the software development lifecycle."
         };
