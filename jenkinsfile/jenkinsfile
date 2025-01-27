@@ -2,44 +2,39 @@ pipeline {
     agent any
 
     environment {
-        // Add your AWS credentials here (or use Jenkins credentials)
-        AWS_ACCESS_KEY_ID = 'your-access-key-id'
-        AWS_SECRET_ACCESS_KEY = 'your-secret-access-key'
+        // Use Jenkins credentials for AWS
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
         AWS_DEFAULT_REGION = 'us-east-1'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Clone your GitHub repository
-                git branch: 'main', url: 'https://github.com/cjhubgit/static-website.git'
+                checkout scm // Automatically uses the repository configured in the Jenkins job
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                // Install npm dependencies
                 sh 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                // Run tests (if applicable)
                 sh 'npm test'
             }
         }
 
         stage('Build Static Website') {
             steps {
-                // Build the static website
                 sh 'npm run build'
             }
         }
 
         stage('Deploy to S3') {
             steps {
-                // Sync the build folder to your S3 bucket
                 sh 'aws s3 sync ./build s3://static-website-devops --delete'
             }
         }
